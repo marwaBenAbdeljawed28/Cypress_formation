@@ -1,23 +1,32 @@
-name: cypress formation with github actions
+name: Cypress Tests
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
   cypress-run:
     runs-on: windows-latest
-    strategy:
-        fail-fast: false
-        matrix:
-            containers: [1, 2, 3]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
         with:
-          browser: chrome
-          record: true
-          parallel: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests with Chrome
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome # Spécifie l'utilisation de Chrome
+          headless: true  # Exécute Chrome en mode headless
+          record: false   # Désactive l'enregistrement (si non nécessaire)
+
+       
