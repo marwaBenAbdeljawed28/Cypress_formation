@@ -14,13 +14,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
-
       - name: Run Cypress tests with Chrome
         uses: cypress-io/github-action@v5
         with:
-          browser: chrome
-          record: true
-          parallel: true
-       
+          browser: chrome # Spécifie l'utilisation de Chrome
+          headless: true  # Exécute Chrome en mode headless
+          record: false   # Désactive l'enregistrement (si non nécessaire)
