@@ -19,5 +19,4 @@ jobs:
           browser: chrome
           record: true
           parallel: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+       
