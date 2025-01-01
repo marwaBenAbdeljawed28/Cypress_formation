@@ -1,0 +1,19 @@
+name: cypress formation with github actions
+
+on: push
+
+jobs:
+    cypress-run:
+        runs-on: window-latest
+        steps:
+            
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Cypress run
+              uses: cypress-io/github-action@v6
+        
+
+
+   
+
