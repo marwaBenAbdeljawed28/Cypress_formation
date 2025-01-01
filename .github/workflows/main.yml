@@ -27,6 +27,6 @@ jobs:
         with:
           browser: chrome # Spécifie l'utilisation de Chrome
           headless: true  # Exécute Chrome en mode headless
-          record: false   # Désactive l'enregistrement (si non nécessaire)
+          record: false  
 
        
