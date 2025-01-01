@@ -1,0 +1,20 @@
+{
+  "name": "cypress_formation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "cypress:record": "npx cypress run --record --key a89e1ca0-134b-435d-b4a6-3e8366861548",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cypress": "^13.17.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1"
+  }
+}
