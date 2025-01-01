@@ -5,6 +5,10 @@ on: push
 jobs:
   cypress-run:
     runs-on: windows-latest
+    strategy:
+        fail-fast: false
+        matrix:
+            containers: [1, 2, 3]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
