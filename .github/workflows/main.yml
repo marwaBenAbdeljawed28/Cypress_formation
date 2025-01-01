@@ -3,27 +3,17 @@ name: cypress formation with github actions
 on: push
 
 jobs:
-    cypress-run:
-        runs-on: windows-latest
-        steps:
-            
-            - name: Checkout
-              uses: actions/checkout@v4
+  cypress-run:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-            - name: Cypress run
-              uses: cypress-io/github-action@v6
-
-             with:
-                browser: chrome
-                record: true
-                parallel: true
-             env:
-                CYPRESS_RECORD_KEY: ${{secrets.CYPRESS_RECORD_KEY}}
-             
-          
-
-        
-
-
-   
-
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          record: true
+          parallel: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
